@@ -85,6 +85,7 @@ ReactDOM.render(
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+  products: [],
   cartItems: [],
   amount: 0,
   total: 0,
@@ -137,7 +138,8 @@ nav svg {
 import cartItems from "../../cartItems";
 
 const initialState = {
-  cartItems: cartItems,
+  products: [],
+  cartItems: [],
   amount: 0,
   total: 0,
   isLoading: true,
@@ -173,31 +175,6 @@ const actionCreator = (payload) => {
 };
 ```
 
-- CartContainer.js
-
-```js
-import React from "react";
-import CartItem from "./CartItem";
-import { useDispatch, useSelector } from "react-redux";
-
-const CartContainer = () => {
-  const dispatch = useDispatch();
-
-  return (
-    <button
-      className="btn clear-btn"
-      onClick={() => {
-        dispatch(clearCart());
-      }}
-    >
-      clear cart
-    </button>
-  );
-};
-
-export default CartContainer;
-```
-
 #### Remove, Increase, Decrease
 
 - cartSlice.js
@@ -207,6 +184,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import cartItems from "../../cartItems";
 
 const initialState = {
+  products: [],
   cartItems: [],
   amount: 0,
   total: 0,
@@ -298,20 +276,6 @@ const modalSlice = createSlice({
 export const { openModal, closeModal, openCart, closeCart } =
   modalSlice.actions;
 export default modalSlice.reducer;
-```
-
-- App.js
-
-```js
-const { isOpen } = useSelector((state) => state.modal);
-
-return (
-  <main>
-    {isOpen && <Modal />}
-    <Navbar />
-    <CartContainer />
-  </main>
-);
 ```
 
 #### async functionality with createAsyncThunk
