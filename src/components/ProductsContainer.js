@@ -30,9 +30,6 @@ export default function ProductsContainer() {
   }
   return (
     <>
-      <center>
-        <h1>Example Shop</h1>
-      </center>
       <section className="products">
         <ToggleButton />
         {products.map((item) => (
