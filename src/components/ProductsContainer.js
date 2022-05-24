@@ -30,11 +30,11 @@ export default function ProductsContainer() {
   }
   return (
     <>
+      <center>
+        <h1>Example Shop</h1>
+      </center>
       <section className="products">
         <ToggleButton />
-        <center>
-          <h1>Example Shop</h1>
-        </center>
         {products.map((item) => (
           <Product {...item} key={item._id} />
         ))}
