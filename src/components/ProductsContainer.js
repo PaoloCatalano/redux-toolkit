@@ -32,6 +32,9 @@ export default function ProductsContainer() {
     <>
       <section className="products">
         <ToggleButton />
+        <center>
+          <h1>Example Shop</h1>
+        </center>
         {products.map((item) => (
           <Product {...item} key={item._id} />
         ))}
