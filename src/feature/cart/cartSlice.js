@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-const url = "https://e-commerce-tutorial.herokuapp.com/api/v1/products";
+const url = "https://e-commerce-tutorial.onrender.com/api/v1/products";
 
 export const getCartItems = createAsyncThunk("cart/getCartItems", () => {
   return fetch(url)
